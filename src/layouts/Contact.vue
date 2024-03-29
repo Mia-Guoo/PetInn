@@ -1,0 +1,38 @@
+<template>
+  <div class="section-container">
+    <div class="content-wrapper" id="contact" style="display: flex">
+      <div>
+        <header class="section-header">
+          <h2>Contact Us</h2>
+        </header>
+        <p>
+          Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....
+        </p>
+                <p>
+          Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....
+        </p>
+        <p> Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....
+          Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....</p>
+        <div class="check-box">
+          <input type="checkbox" id="cookies" name="check" value="cookies" />
+          <label for="cookies">Cookies</label><br />
+          <input type="checkbox" id="donut" name="check" value="donut" />
+          <label for="donut">Donut</label><br />
+          <input type="checkbox" id="bun" name="check" value="bun" />
+          <label for="bun">Bun</label><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script></script>
+<style>
+</style>

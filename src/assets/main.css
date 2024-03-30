@@ -32,24 +32,9 @@
 .section-header {
   margin-top: 2rem;
 }
-/* @media (max-width: 576px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-}
 
-@media (min-width: 576px) and (max-width: 992px) {
-  .content-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 
-  .content-wrapper>div {
-    width: 50%;
-  }
-}
-
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .content-wrapper {
     flex-direction: row;
   }
@@ -57,4 +42,4 @@
   .content-wrapper>div {
     width: 33.33%;
   }
-} */
+}  */

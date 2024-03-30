@@ -28,13 +28,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#account"
-                ><img class="nav-icon" src="../assets/user.png" />Account</a
+              <a class="nav-link" href="#contact"
+                ><img class="nav-icon" src="../assets/chat.png" />Contact Us</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact"
-                ><img class="nav-icon" src="../assets/chat.png" />Contact Us</a
+              <a class="nav-link" href="SignIn.html"
+                ><img class="nav-icon" src="../assets/user.png" />Sign In/Sign Up</a
               >
             </li>
           </ul>

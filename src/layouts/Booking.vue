@@ -7,7 +7,7 @@
           <form>
             <div class="mb-3">
               <!-- Select dropdown -->
-              <label for="serviceType" class="form-label">Service Type</label
+              <label for="service-type" class="form-label">Service Type</label
               ><br />
               <select name="serviceType" id="service-type">
                 <option
@@ -28,10 +28,10 @@
                 You can also select an address from the map.
               </p>
               <!-- Dates -->
-              <label for="exampleInputPassword1" class="form-label">Dates</label
+              <label for="tart-date" class="form-label">Dates</label
               ><br />
               <input type="date" id="start-date" />
-              <label for="exampleInputPassword1" class="form-label">
+              <label for="end-date" class="form-label">
                 &rarr;</label
               >
               <input type="date" id="end-date" />

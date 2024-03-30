@@ -1,8 +1,9 @@
 @import './base.css';
 
-#app {
+#app, #sign-in {
   margin: 0 auto;
   background-color: #eef5f6;
+  border-radius: 0.5rem;
 }
 
 @media (hover: hover) {

@@ -4,7 +4,6 @@
     <Hero></Hero>
     <about></about>
     <booking></booking>
-    <account></account>
     <contact></contact>
   </div>
 </template>
@@ -13,7 +12,6 @@
 import Nav from "./layouts/Nav.vue";
 import Hero from  "./layouts/Hero.vue";
 import About from "./layouts/About.vue";
-import Account from "./layouts/Account.vue";
 import Booking from "./layouts/Booking.vue";
 import Contact from "./layouts/Contact.vue";
 </script>

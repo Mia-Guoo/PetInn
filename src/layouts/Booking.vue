@@ -26,14 +26,6 @@
           Pet Inn is ....
           Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....Pet Inn is ....
         </p>
-        <div class="check-box">
-          <input type="checkbox" id="cookies" name="check" value="cookies" />
-          <label for="cookies">Cookies</label><br />
-          <input type="checkbox" id="donut" name="check" value="donut" />
-          <label for="donut">Donut</label><br />
-          <input type="checkbox" id="bun" name="check" value="bun" />
-          <label for="bun">Bun</label><br />
-        </div>
       </div>
     </div>
   </div>

@@ -3,8 +3,8 @@
     <Nav></Nav>
     <Hero></Hero>
     <about></about>
-    <account></account>
     <booking></booking>
+    <account></account>
     <contact></contact>
   </div>
 </template>

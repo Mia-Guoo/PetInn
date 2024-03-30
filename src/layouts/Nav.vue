@@ -22,14 +22,14 @@
                 ><img class="nav-icon" src="../assets/paw.png" />About</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#account"
-                ><img class="nav-icon" src="../assets/user.png" />Account</a
+                        <li class="nav-item">
+              <a class="nav-link" href="#booking"
+                ><img class="nav-icon" src="../assets/booking.png" />Booking</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#booking"
-                ><img class="nav-icon" src="../assets/booking.png" />Booking</a
+              <a class="nav-link" href="#account"
+                ><img class="nav-icon" src="../assets/user.png" />Account</a
               >
             </li>
             <li class="nav-item">

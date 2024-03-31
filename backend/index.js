@@ -20,9 +20,20 @@ route(app);
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
-connection.once("open", () => {
+// connection.once("open", () => {
+//   console.log("MongoDB database connection established successfully");
+// });
+connection.once("open", async () => {
   console.log("MongoDB database connection established successfully");
-});
 
+  try {
+    // Assuming User is a Mongoose model
+    // Replace with your actual model if different
+    const user = await User.findOne({});
+    console.log("User found:", user);
+  } catch (error) {
+    console.error("Error finding user:", error);
+  }
+});
 app.listen(port);
 console.log("User List started on " + port);

@@ -1,8 +1,9 @@
 <template>
   <div class="sign-container">
+    <Nav></Nav>
     <!-- Sign In -->
     <div class="section-container">
-      <div class="content-wrapper" id="booking">
+      <div class="content-wrapper">
         <form class="modal-content" action="/action_page.php">
           <div class="container">
             <h2>Sign In</h2>
@@ -30,7 +31,7 @@
     </div>
     <!-- Sign Up -->
     <div class="section-container">
-      <div class="content-wrapper" id="booking">
+      <div class="content-wrapper">
         <div id="sign-up">
           <form class="modal-content" action="/action_page.php">
             <div class="container">
@@ -86,7 +87,21 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import Nav from "./Nav.vue";
+import axios from 'axios';
+
+export default{
+  data (){
+    return {
+      User: {
+        email: 'Mia@gmail.com', password: '1234'
+      }
+    }
+  }
+}
+
+</script>
 <style>
 .sign-container input, button{
     border-radius: 0.5rem !important;

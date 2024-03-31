@@ -14,7 +14,7 @@
               placeholder="Enter Email"
               name="email"
               required
-            /><br>
+            /><br />
 
             <label for="signin-psw"><b>Password</b></label>
             <input
@@ -23,7 +23,7 @@
               placeholder="Enter Password"
               name="psw"
               required
-            /><br>
+            /><br />
             <button type="submit" class="signinbtn">Sign In</button>
           </div>
         </form>
@@ -45,8 +45,8 @@
                 placeholder="Enter Your Name"
                 name="name"
                 required
-                v-model="User.name"
-              /><br>
+                v-model="User.username"
+              /><br />
               <label for="email"><b>Email</b></label>
               <input
                 type="text"
@@ -55,7 +55,7 @@
                 name="email"
                 required
                 v-model="User.email"
-              /><br>
+              /><br />
 
               <label for="psw"><b>Password</b></label>
               <input
@@ -65,7 +65,7 @@
                 name="psw"
                 required
                 v-model="User.password"
-              /><br>
+              /><br />
 
               <label for="psw-repeat"><b>Repeat Password</b></label>
               <input
@@ -75,7 +75,7 @@
                 name="psw-repeat"
                 required
                 v-model="reppassword"
-              /><br>
+              /><br />
               <p>
                 By creating an account you agree to our
                 <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
@@ -89,7 +89,9 @@
                 >
                   Cancel
                 </button>
-                <button type="submit" class="signupbtn" @click="addUser">Sign Up</button>
+                <button type="submit" class="signupbtn" @click="addUser">
+                  Sign Up
+                </button>
               </div>
             </div>
           </form>
@@ -101,59 +103,76 @@
 
 <script>
 import Nav from "./Nav.vue";
-import axios from 'axios';
-export default{
-  components:{Nav},
-  data (){
+import axios from "axios";
+export default {
+  components: { Nav },
+  data() {
     return {
       reppassword: "",
       User: {
-        name: "", email: "", password: ""
-      }
-    }
+        username: "",
+        email: "",
+        password: "",
+      },
+    };
   },
   methods: {
-    async addUser(event){
+    async addUser(event) {
       event.preventDefault();
       let newUser = {
-        name: this.User.name,
+        username: this.User.username,
         email: this.User.email,
         password: this.User.password,
-      }
-      console.log(newUser);
-      try {
-      const response = await axios.post('http://localhost:3000/api/users', newUser);
-      console.log(response.data);
-      alert("User is signed up!")
-      this.User.name = "",
-      this.User.email = "",
-      this.User.password = "",
-      this.reppassword = ""
-    } catch (error) {
-      console.error(error.response.data);
-      console.error(error);
-    }
-    }
-  }
-}
+      };
 
+      if (newUser.password != this.reppassword) {
+        alert("Two passwords are not match.");
+      } else {
+        // Check if email is in the proper format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(newUser.email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+        console.log(newUser);
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/api/users",
+            newUser
+          );
+          console.log(response.data);
+          alert("User is signed up!");
+          (this.User.name = ""),
+            (this.User.email = ""),
+            (this.User.password = ""),
+            (this.reppassword = "");
+        } catch (error) {
+          console.error(error.response.data);
+          console.error(error);
+        }
+      }
+    },
+  },
+};
 </script>
 <style>
-.sign-container input, button{
-    border-radius: 0.5rem !important;
+.sign-container input,
+button {
+  border-radius: 0.5rem !important;
 }
-button{
-    margin-right: 1rem !important;
-    min-width: 70px;
+button {
+  margin-right: 1rem !important;
+  min-width: 70px;
 }
-button:hover{
-    background-color: #65bbc2;
+button:hover {
+  background-color: #65bbc2;
 }
-.sign-container h2{
-    text-align: center;
-    margin-bottom: 1rem !important;
+.sign-container h2 {
+  text-align: center;
+  margin-bottom: 1rem !important;
 }
-.sign-container input[type=text], input[type=password] {
+.sign-container input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;

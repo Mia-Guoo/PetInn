@@ -6,7 +6,7 @@
         <h1>Welcome To PetInn</h1>
       </header>
       <div class="search-container">
-        <form action="">
+        <form action="" style="display: flex; height: 40px;">
           <input class="search-bar" type="text" placeholder="Search.." name="search" />
           <button class="search-button" type="submit"><img class="search-icon" src="../assets/searching.png">Search</button>
         </form>
@@ -54,6 +54,7 @@ h1 {
   width: 80%;
   margin-right: 1rem !important;
   border-radius: 0.5rem;
+  flex: 1;
 }
 .search-button{
   border-radius: 0.5rem;

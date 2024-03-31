@@ -5,12 +5,6 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-      unique: true,
-      minlength: 3,
-    },
     username: {
       type: String,
     },

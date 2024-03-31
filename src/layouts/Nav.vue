@@ -45,6 +45,9 @@
 </template>
 <script></script>
 <style>
+.navbar{
+  padding: 0 !important;
+}
 .navbar-brand {
   font-size: 20px;
 }

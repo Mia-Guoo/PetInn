@@ -24,5 +24,6 @@ export default {
     overflow: hidden;
     background-color: #d4eaef;
     padding: 1rem;
+    border: 1px solid darkorange;
 }
         </style>

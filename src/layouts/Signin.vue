@@ -7,19 +7,19 @@
         <form class="modal-content" action="/action_page.php">
           <div class="container">
             <h2>Sign In</h2>
-            <label for="email"><b>Email</b></label>
+            <label for="signin-email"><b>Email</b></label>
             <input
               type="text"
-              id="email"
+              id="signin-email"
               placeholder="Enter Email"
               name="email"
               required
             /><br>
 
-            <label for="psw"><b>Password</b></label>
+            <label for="signin-psw"><b>Password</b></label>
             <input
               type="password"
-              id="psw"
+              id="signin-psw"
               placeholder="Enter Password"
               name="psw"
               required
@@ -38,6 +38,15 @@
               <h2>Sign Up</h2>
               <p>Please fill in this form to create an account.</p>
               <hr />
+              <label for="name"><b>Name</b></label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter Your Name"
+                name="name"
+                required
+                v-model="User.name"
+              /><br>
               <label for="email"><b>Email</b></label>
               <input
                 type="text"
@@ -45,6 +54,7 @@
                 placeholder="Enter Email"
                 name="email"
                 required
+                v-model="User.email"
               /><br>
 
               <label for="psw"><b>Password</b></label>
@@ -54,6 +64,7 @@
                 placeholder="Enter Password"
                 name="psw"
                 required
+                v-model="User.password"
               /><br>
 
               <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -63,6 +74,7 @@
                 placeholder="Repeat Password"
                 name="psw-repeat"
                 required
+                v-model="reppassword"
               /><br>
               <p>
                 By creating an account you agree to our
@@ -77,7 +89,7 @@
                 >
                   Cancel
                 </button>
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" class="signupbtn" @click="addUser">Sign Up</button>
               </div>
             </div>
           </form>
@@ -87,16 +99,40 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import Nav from "./Nav.vue";
 import axios from 'axios';
-
 export default{
+  components:{Nav},
   data (){
     return {
+      reppassword: "",
       User: {
-        email: 'Mia@gmail.com', password: '1234'
+        name: "", email: "", password: ""
       }
+    }
+  },
+  methods: {
+    async addUser(event){
+      event.preventDefault();
+      let newUser = {
+        name: this.User.name,
+        email: this.User.email,
+        password: this.User.password,
+      }
+      console.log(newUser);
+      try {
+      const response = await axios.post('http://localhost:3000/api/users', newUser);
+      console.log(response.data);
+      alert("User is signed up!")
+      this.User.name = "",
+      this.User.email = "",
+      this.User.password = "",
+      this.reppassword = ""
+    } catch (error) {
+      console.error(error.response.data);
+      console.error(error);
+    }
     }
   }
 }

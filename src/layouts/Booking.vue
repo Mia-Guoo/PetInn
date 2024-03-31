@@ -110,6 +110,7 @@ export default {
   background-color: #d4eaef;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  border: 1px solid darkorange;
 }
 .service-type-icon {
   max-width: 15px;
